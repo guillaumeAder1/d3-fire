@@ -14,6 +14,7 @@ class Flame extends Circle {
         const origX = random(x - this.variable, x + this.variable);
         const origY = y;
 
+
         const d = {
             x: origX,
             y: origY,
