@@ -15,6 +15,8 @@ class Flame extends Circle {
         const origY = y;
 
 
+
+
         const d = {
             x: origX,
             y: origY,
