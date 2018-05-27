@@ -17,6 +17,7 @@ class Source {
         this.y = y
         this.node = node
         this.type = type
+        this.defaultDirection = 100
         return this;
     }
 
@@ -28,7 +29,8 @@ class Source {
                         x: this.x,
                         y: this.y,
                         node: this.node,
-                        intensity: 20
+                        intensity: 20,
+                        direction: this.defaultDirection
                     })
                 }, this.calcIntensity(this.intensity));
                 break;
@@ -38,7 +40,8 @@ class Source {
                         x: this.x,
                         y: this.y,
                         node: this.node,
-                        intensity: 5
+                        intensity: 5,
+                        direction: this.defaultDirection
                     })
                 }, this.calcIntensity(this.intensity));
 

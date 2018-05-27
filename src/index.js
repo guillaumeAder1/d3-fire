@@ -6,6 +6,7 @@ import Light from './Light'
 (function init(params) {
     const main = d3.select('#app');
     const stage = main.append('svg')
+        .attr('id', 'svgStage')
         .attr("width", '100%')
         .attr("height", '100%')
 

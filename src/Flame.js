@@ -12,7 +12,7 @@ class Flame extends Circle {
         // this.destColor = listColor[random(2)]
         // this.color = listColor[random(2)]
 
-        const { x, y, node } = params;
+        const { x, y, node, direction } = params;
 
         this.destColor = 'rgb(253, 175, 31)'; // end color
         this.color = 'orange'; // start color
@@ -23,8 +23,8 @@ class Flame extends Circle {
         this.transition = easeLinear
         this.duration = random(1500, 1700)
         this.delay = random(5)
-        this.origX = random(x - this.variable, x + this.variable);
-        this.destX = random(x - this.variable / 3, x + this.variable / 3) // destx to be centered
+        this.origX = random(x - this.variable, x + this.variable)
+        this.destX = random(x - this.variable / 3, x + this.variable / 3) + direction// destx to be centered
         this.destY = random(y - 250, y - 350); // end y position 
         this.startDuration = 500
 
