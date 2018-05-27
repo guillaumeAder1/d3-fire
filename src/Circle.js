@@ -10,20 +10,10 @@ class Circle {
 
     }
 
-    init(x, y, node) {
-        const origX = random(x - this.variable, x + this.variable);
-        const origY = y;
+    init(d) {
 
-        const d = {
-            x: origX,
-            y: origY,
-            r: random(20, 70),
-            delay: random(5),
-            duration: random(1500, 1700),
-            destX: random(x - this.variable / 3, x + this.variable / 3),
-        }
         // draw circle 
-        this.circle = node
+        this.circle = d.node
             .append('circle')
             .attr("cx", d.x)
             .attr("cy", d.y)
@@ -38,7 +28,7 @@ class Circle {
 
         // animate go up
         this.circle.transition()
-            .ease(d3.easeLinear)
+            .ease(d.transition)
             .duration(d.duration)
             .delay(d.delay)
             .attr("cy", random(100, 150))
