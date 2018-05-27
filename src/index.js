@@ -1,11 +1,11 @@
 import style from './main.css'
-import * as d3 from 'd3'
+import {select} from 'd3-selection'
 import Source from './Source'
 import Light from './Light'
 import Slider from './Slider'
 
 (function init(params) {
-    const main = d3.select('#app');
+    const main = select('#app');
     const stage = main.append('svg')
         .attr('id', 'svgStage')
         .attr("width", '100%')

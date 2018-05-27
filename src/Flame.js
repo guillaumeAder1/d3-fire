@@ -1,7 +1,7 @@
 
 import Circle from './Circle'
 import random from 'lodash/random';
-import { easeLinear } from 'd3'
+import { easeLinear } from 'd3-ease'
 
 class Flame extends Circle {
     constructor(params) {

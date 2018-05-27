@@ -46,7 +46,7 @@ class Circle {
             .style("opacity", random(0, .1))
             .attr("r", this.r / 4)
             .on('end', (d, i, nodes) => {
-                d3.select(nodes[i]).remove();
+                select(nodes[i]).remove();
             });
     }
 }

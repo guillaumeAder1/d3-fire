@@ -1,6 +1,4 @@
-import * as d3 from 'd3'
 import random from 'lodash/random';
-
 
 class Light {
     constructor(params) {
@@ -17,8 +15,6 @@ class Light {
     init(params) {
 
 
-        const colorRange = ['#d73027', '#e0e0e0', '#4575b4']
-        const color = d3.scaleLinear().range(colorRange).domain([-1, 0, 1]);
 
         const svg = params.stage
             .append("g");
