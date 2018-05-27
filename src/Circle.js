@@ -36,7 +36,6 @@ class Circle {
 
 
         // animate go up
-
         this.circle.transition()
             .ease(this.transition)
             .duration(this.duration)
