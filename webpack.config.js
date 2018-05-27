@@ -1,7 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+
 module.exports = {
     devtool: 'source-map',
+    entry: {
+        main: path.resolve(__dirname, './src/index')
+    },
     module: {
         rules: [
             {
@@ -25,6 +30,13 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
             }
         ]
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
+            }
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({
