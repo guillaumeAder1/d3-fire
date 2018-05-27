@@ -11,15 +11,11 @@ class Slider {
         this.slider.setAttribute("value", params.value);
 
         this.slider.addEventListener('change', (e) => {
-            console.log(e.target.value)
             params.callback(e.target.value)
         })
 
         this.node.appendChild(this.slider);
-
-
     }
-
 }
 
 export default Slider;
