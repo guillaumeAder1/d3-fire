@@ -17,7 +17,7 @@ class Source {
         this.y = y
         this.node = node
         this.type = type
-        this.defaultDirection = 100
+        this.defaultDirection = params.direction
         return this;
     }
 
@@ -25,7 +25,7 @@ class Source {
         switch (this.type) {
             case 'flame':
                 setInterval(() => {
-                    let fire = new Flame({
+                    this.curInstance = new Flame({
                         x: this.x,
                         y: this.y,
                         node: this.node,
@@ -36,7 +36,7 @@ class Source {
                 break;
             case 'smoke':
                 setInterval(() => {
-                    let fire = new Smoke({
+                    this.curInstance = new Smoke({
                         x: this.x,
                         y: this.y,
                         node: this.node,

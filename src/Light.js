@@ -9,13 +9,13 @@ class Light {
         this.durmin = 300
         this.rmax = 300
         this.rmin = 250
+        this.direction = params.direction
+        this.x = params.x
         this.init(params)
     }
 
     init(params) {
-        const margin = 0,
-            width = 960 - margin,
-            height = 250 - margin;
+
 
         const colorRange = ['#d73027', '#e0e0e0', '#4575b4']
         const color = d3.scaleLinear().range(colorRange).domain([-1, 0, 1]);
@@ -36,7 +36,7 @@ class Light {
             .attr("stop-color", 'rgba(41,41,41,0)'); // body bg color transparency...
 
         this.circle = svg.append("circle")
-            .attr("cx", params.x)
+            .attr("cx", params.x + this.direction)
             .attr("cy", params.y)
             .attr("r", 300)
             .style("opacity", 0)
@@ -54,9 +54,11 @@ class Light {
 
         this.circle.transition()
             .duration(random(this.durmin, this.durmax))
+            .attr('cx', this.x + this.direction)
             .attr('r', random(this.rmin, this.rmin - 20))
             .transition()
             .duration(random(this.durmin, this.durmax))
+            .attr('cx', this.x + this.direction)
             .attr('r', random(this.rmax - 50, this.rmax))
             .on('end', () => this.repeat())
 

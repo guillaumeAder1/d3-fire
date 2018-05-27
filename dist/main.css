@@ -25,4 +25,10 @@ body {
     background-color: rgba(185, 185, 185, 0.637);
 }
 
+#wind-slider {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
 /*# sourceMappingURL=main.css.map*/
