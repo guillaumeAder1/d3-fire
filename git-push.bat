@@ -1,4 +1,5 @@
-cd C:\Users\gader\Documents\_projects\private\d3-fire
+set mypath=%cd%
+cd %mypath%
 call npm run build
 set /P comment=Enter commit comment here: 
 echo %comment%
