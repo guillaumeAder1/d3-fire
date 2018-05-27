@@ -4,6 +4,15 @@ import random from 'lodash/random';
 
 class Light {
     constructor(params) {
+
+        this.durmax = 500
+        this.durmin = 300
+        this.rmax = 300
+        this.rmin = 250
+        this.init(params)
+    }
+
+    init(params) {
         const margin = 0,
             width = 960 - margin,
             height = 250 - margin;
@@ -31,12 +40,6 @@ class Light {
             .attr("cy", params.y)
             .attr("r", 300)
             .style("opacity", 0)
-
-
-        this.durmax = 500
-        this.durmin = 300
-        this.rmax = 300
-        this.rmin = 250
 
         this.circle.transition()
             .duration(3000)

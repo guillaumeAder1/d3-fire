@@ -3,9 +3,6 @@ import Circle from './Circle'
 import random from 'lodash/random';
 import { easeLinear } from 'd3'
 
-
-
-
 class Flame extends Circle {
     constructor(params) {
         super(params);
@@ -19,7 +16,7 @@ class Flame extends Circle {
 
         this.destColor = 'rgb(253, 175, 31)'; // end color
         this.color = 'orange'; // start color
-        this.variable = 40; // 
+        this.variable = 40; // random range value  used for origin X [ .... ] or [ .. ]
         this.node = node // svg dom node
         this.y = y // start posy (2/3 of the screen)
         this.r = random(20, 70)

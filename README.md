@@ -9,3 +9,5 @@ create fire with d3 js v5
   npm install
   npm start
 ```
+
+then open localhost:8080/

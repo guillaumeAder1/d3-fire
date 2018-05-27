@@ -17,7 +17,6 @@ class Circle {
         this.destX = 0
         this.destY = 0
         this.startDuration = 0
-
     }
 
     init() {
@@ -36,7 +35,7 @@ class Circle {
             .style("opacity", random(.4, .9))
 
 
-        // animate go up
+        // animate and remove shape when finished
         this.circle.transition(this.transition)
             .ease(this.transition)
             .duration(this.duration)
@@ -49,7 +48,6 @@ class Circle {
             .on('end', (d, i, nodes) => {
                 d3.select(nodes[i]).remove();
             });
-
     }
 }
 

@@ -3,9 +3,6 @@ import Circle from './Circle'
 import random from 'lodash/random';
 import { easeLinear } from 'd3'
 
-
-
-
 class Smoke extends Circle {
     constructor(params) {
         super(params);
