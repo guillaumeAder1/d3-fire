@@ -51,7 +51,6 @@ class Light {
     }
 
     repeat() {
-
         this.circle.transition()
             .duration(random(this.durmin, this.durmax))
             .attr('cx', this.x + this.direction)
@@ -61,7 +60,6 @@ class Light {
             .attr('cx', this.x + this.direction)
             .attr('r', random(this.rmax - 50, this.rmax))
             .on('end', () => this.repeat())
-
     }
 }
 

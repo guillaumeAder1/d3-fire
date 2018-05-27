@@ -7,7 +7,7 @@
         "dev": "webpack-dev-server --mode development --open --watch",
         "build": "webpack --mode production",
         "start": "npm run dev",
-        "dopush": "git add ."
+        "dopush": ""
     },
     "keywords": [],
     "author": "",
