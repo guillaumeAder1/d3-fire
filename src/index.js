@@ -33,5 +33,5 @@ import Light from './Light'
         x: Math.floor(canvasData.width / 2),
         y: fireY - 50
     })
-    
+
 })({})
