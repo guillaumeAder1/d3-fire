@@ -1,5 +1,5 @@
-import * as d3 from 'd3'
 import Flame from './Flame'
+import Smoke from './Smoke'
 
 
 /**
@@ -11,24 +11,44 @@ import Flame from './Flame'
 class Source {
 
     constructor(params) {
-        const { x, y, node } = params
+        const { x, y, node, type } = params
         this.intensity = params.intensity
-        this.init(params)
+        this.x = x;
+        this.y = y
+        this.node = node
+        this.type = type
+        return this;
     }
 
-    init(params) {
+    init() {
+        switch (this.type) {
+            case 'flame':
+                setInterval(() => {
+                    let fire = new Flame({
+                        x: this.x,
+                        y: this.y,
+                        node: this.node,
+                        intensity: 20
+                    })
+                }, this.calcIntensity(this.intensity));
+                break;
+            case 'smoke':
+                setInterval(() => {
+                    let fire = new Smoke({
+                        x: this.x,
+                        y: this.y,
+                        node: this.node,
+                        intensity: 5
+                    })
+                }, this.calcIntensity(this.intensity));
 
-        const { x, y, node } = params;
+                break;
 
-        setInterval(() => {
-            let fire = new Flame({
-                x: x,
-                y: y,
-                node: node,
-                intensity: 20
-            })
-        }, this.calcIntensity(this.intensity));
+            default:
+                break;
+        }
 
+        return this;
     }
 
     calcIntensity(val) {

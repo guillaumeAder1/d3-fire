@@ -8,14 +8,15 @@ class Circle {
         this.color = '#fff'
         this.destColor = '#fff'
         this.origX = 0
-        this.node = params.node || 'dom'
-        this.y = params.y || 0
+        this.node = node || 'dom'
+        this.y = y || 0
         this.r = 0
         this.transition = null
         this.duration = 0
         this.delay = 0
         this.destX = 0
         this.destY = 0
+        this.startDuration = 0
 
     }
 
@@ -29,14 +30,14 @@ class Circle {
             .attr("r", 0)
             .style("fill", this.color)
             .style("opacity", 0)
-            .transition()
-            .duration(500)
+            .transition(this.transition)
+            .duration(this.startDuration)
             .attr("r", this.r)
             .style("opacity", random(.4, .9))
 
 
         // animate go up
-        this.circle.transition()
+        this.circle.transition(this.transition)
             .ease(this.transition)
             .duration(this.duration)
             .delay(this.delay)

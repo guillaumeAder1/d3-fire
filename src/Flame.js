@@ -29,6 +29,7 @@ class Flame extends Circle {
         this.origX = random(x - this.variable, x + this.variable);
         this.destX = random(x - this.variable / 3, x + this.variable / 3) // destx to be centered
         this.destY = random(y - 250, y - 350); // end y position 
+        this.startDuration = 500
 
         this.init();
     }
